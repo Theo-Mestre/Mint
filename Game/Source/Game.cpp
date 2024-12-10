@@ -3,7 +3,7 @@
 #include "GameStates/MainMenuState.h"
 
 MyGame::MyGame()
-	: Core::Application()
+	: Mint::Application()
 {
 }
 
@@ -13,7 +13,7 @@ MyGame::~MyGame()
 
 void MyGame::Load()
 {
-	Core::Application::Load();
+	Mint::Application::Load();
 
 	m_stateManager->Add(CreateRef<MainMenuState>());
 }

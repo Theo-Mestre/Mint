@@ -3,42 +3,42 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Core/State.h"
-#include "Core/AssetManagment/Assets.h"
+#include "Mint/State.h"
+#include "Mint/AssetManagment/Assets.h"
 
-#include "Core/Sprites/StaticSprite.h"
-#include "Core/Sprites/Sprite.h"
-#include "Core/Text.h"
+#include "Mint/Sprites/StaticSprite.h"
+#include "Mint/Sprites/Sprite.h"
+#include "Mint/Text.h"
 
-#include "Core/UI/UIRenderer.h"
+#include "Mint/UI/UIRenderer.h"
 
 class MainMenuState
-	: public Core::State
+	: public Mint::State
 {
 public:
 	MainMenuState();
 	~MainMenuState();
 
 	virtual void Load() override;
-	virtual void OnEventReceived(const Core::Event& _event) override;
+	virtual void OnEventReceived(const Mint::Event& _event) override;
 	virtual void Update() override;
-	virtual void Render(Ref<Core::Renderer> _renderer) override;
+	virtual void Render(Ref<Mint::Renderer> _renderer) override;
 	virtual void Unload() override;
 
 private:
 	void InitSprite();
 
 private:
-	Core::Text m_title;
+	Mint::Text m_title;
 
-	Core::StaticSprite m_background;
-	Core::Sprite m_sprite;
+	Mint::StaticSprite m_background;
+	Mint::Sprite m_sprite;
 
-	Core::UI::UIRenderer m_uiRenderer;
-	Core::UI::UIElement m_rootElement;
+	Mint::UI::UIRenderer m_uiRenderer;
+	Mint::UI::UIElement m_rootElement;
 
-	Core::StaticSprite m_uiSprite;
-	Ref<Core::Texture2D> m_uiTexture;
+	Mint::StaticSprite m_uiSprite;
+	Ref<Mint::Texture2D> m_uiTexture;
 };
 
 #endif

@@ -3,6 +3,6 @@
 
 int main()
 {
-	auto game = std::make_unique<MyGame>();
-	game->Run();
+	MyGame game;
+	game.Run();
 }

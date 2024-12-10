@@ -1,10 +1,10 @@
-project (GameName)
-   kind "ConsoleApp"
+project (CoreName)
+   kind "StaticLib"
    language "C++"
    cppdialect "C++20"
    targetdir "Binaries/%{cfg.buildcfg}"
 
-   files { "Source/**.h", "Source/**.cpp", "Source/**.inl"}
+   files { "Source/**.h", "Source/**.cpp", "Source/**.inl" }
 
    defines 
    {
@@ -16,7 +16,6 @@ project (GameName)
    includedirs
    {
       "Source",
-	  ("../" .. (CoreName) .."/Source"),
       "../Vendor/include"
    }
 
@@ -25,9 +24,8 @@ project (GameName)
 	  "../Vendor/lib"
    }
 
-   links
+   links 
    {
-	  (CoreName),
       "flac",
       "freetype",
       "ogg",
@@ -40,16 +38,15 @@ project (GameName)
       "gdi32.lib"
    }
 
-   pchheader "gamepch.h"
-   pchsource "Source/gamepch.cpp"
+   pchheader "mintpch.h"
+   pchsource "Source/mintpch.cpp"
 
-   targetdir ("../binaries/" .. OutputDir .. "/" .. GameName)
-   objdir ("../binaries/intermediates/" .. OutputDir .. "/" .. GameName)
+   targetdir ("../binaries/" .. OutputDir .. "/" .. CoreName)
+   objdir ("../binaries/intermediates/" .. OutputDir .. "/" .. CoreName)
    debugdir "../Assets/"
 
    filter "system:windows"
        systemversion "latest"
-       defines { "WINDOWS" }
 
    filter "configurations:Debug"
        defines { "DEBUG" }

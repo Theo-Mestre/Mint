@@ -1,10 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Core/Application.h"	
+#include "Mint/Application.h"	
 
 class MyGame
-	: public Core::Application
+	: public Mint::Application
 {
 public:
 	MyGame();

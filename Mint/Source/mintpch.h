@@ -1,5 +1,5 @@
-#ifndef GAME_PCH_H
-#define GAME_PCH_H
+#ifndef MINT_PCH_H
+#define MINT_PCH_H
 
 #include <iostream>
 #include <fstream>
@@ -72,5 +72,4 @@
 #include <SFML/Window.hpp>
 
 #include "Mint/Logger.h"
-
 #endif

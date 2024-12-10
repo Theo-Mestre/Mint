@@ -1,5 +1,5 @@
 -- premake5.lua
-CoreName = "Core"
+CoreName = "Mint"
 GameName = "Game"
 ProjectName = "Sandbox"
 
@@ -13,7 +13,7 @@ workspace (ProjectName)
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "Core"
-	include "Core/Build-Core.lua"
+group (CoreName)
+	include (CoreName .. "/Build-" .. CoreName .. ".lua")
 group ""
 include (GameName .. "/Build-" .. GameName ..".lua")
